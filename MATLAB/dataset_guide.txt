@@ -1,0 +1,21 @@
+rebar only
+sim1 - TESTING
+sim2 - TRAINING
+sim3 - TRAINING
+sim4 - TRAINING
+
+MISTAKE!!! SIM 2 3 4 ARE THE SAME! MATLAB RNG ERROR! MUST REDO FOR PROPER VALIDATION
+NOTE THAT MEANS FOR TESTING TRAINING, MUST USE SIM1 AS TESTING. UGHHHH MUST FIX!
+
+rebar with air
+sim5 - training - 1200
+sim6 - training
+sim7 - training
+sim8 - testing
+
+air only
+sim9 - training
+sim10 - training
+sim11 - training
+sim12 - testing
+
