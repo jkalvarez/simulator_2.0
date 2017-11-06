@@ -9,10 +9,19 @@ function [] = generate_image(numberID)
 
 %% Load gpr data and ground truth image via ID
 image_filename = sprintf('./permittivity_map_images/scaled/gt%d.png', numberID);
-data_filename = sprintf('./gprMax_output/sim%d.txt', numberID);
+
+% comment out line below to load old version with text file output
+%data_filename = sprintf('./gprMax_output/sim%d.txt', numberID);
+data_filename = sprintf('./gprMax_output/sim%d_merged.out', numberID);
 
 x = imread(image_filename);
-data = importfile(data_filename);
+% comment out line below to load old version with text file output
+%data = importfile(data_filename);
+
+
+% Load HDF5 file
+data = hdf5read(data_filename, 'rxs/rx1/Ez');
+data = double(data)';
 
 %x = repmat(x, [1 1 3]);
  

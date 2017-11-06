@@ -19,3 +19,26 @@ sim10 - training
 sim11 - training
 sim12 - testing
 
+water only
+sim13 - training
+sim14 - training
+sim15 - training
+sim16 - testing
+
+water and rebar
+sim17 - training
+sim18 - training
+sim19 - training
+sim20 - testing
+
+water and air
+sim21 - training
+sim22 - training
+sim23 - training
+sim24 - testing
+
+water and rebar and air
+sim25 - training
+sim26 - training
+sim27 - training
+sim28 - testing

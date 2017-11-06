@@ -1,15 +1,13 @@
+function [ ] = generate_permittivity_map_function( numberID )
+% Identical to generate_permittivity_map script but functionised to allow
+% for input argument numberID to speed up process
+
 %% Generates permittivity map, given relevant .in file
 
 % Hack function - temporary
 %   Grabs rebar information from .in file using format that was specified
 %   in generate_environment.m
-fname = './in_files/sim13.in';
-
-%% Grab rebar information
-%[x,y,radius]=textread(fname,'%*s:%f%f%*f%*f%*f%*f%f%*s','whitespace',':\n', 'headerlines',18);
-
-%% Grab air information
-%[x1, y1, x2, y2] = textread(fname,'%*s:%f%f%*f%f%f%*f%*s','whitespace',':\n', 'headerlines',18);
+fname = sprintf('./in_files/sim%d.in',numberID);
 
 %% Grab general information. Test, turn into a function if it works
 
@@ -128,7 +126,12 @@ map = map(:,:,1);
 im_map = mat2gray(map, [0 1]);
 imshow(im_map);
 
-imwrite(im_map,'permittivity_map_images/logit_scaled/gt13.png');
+combined_filename = sprintf('permittivity_map_images/logit_scaled/gt%d.png', numberID);
+imwrite(im_map,combined_filename);
 
 %% Added to make sure that the images are loaded fresh and variables are cleared during image creation
 clear;
+
+
+end
+
