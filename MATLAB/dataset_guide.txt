@@ -4,8 +4,12 @@ sim2 - TRAINING
 sim3 - TRAINING
 sim4 - TRAINING
 
+sim 3 and sim 4 in files have been remade but the simulations have not yet been redone
+
 MISTAKE!!! SIM 2 3 4 ARE THE SAME! MATLAB RNG ERROR! MUST REDO FOR PROPER VALIDATION
 NOTE THAT MEANS FOR TESTING TRAINING, MUST USE SIM1 AS TESTING. UGHHHH MUST FIX!
+
+1 1201 2401 3601 4801 6001 7201 8401 9601
 
 rebar with air
 sim5 - training - 1200

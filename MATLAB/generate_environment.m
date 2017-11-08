@@ -122,39 +122,39 @@ x = imread('template.png');
 % WATER VOID SPECIFICATIONS 
 
 % Starting x distance for randomization
-current_distance = 0;
-water_min_spacing = 100;
-water_max_spacing = 500;
-
-
-while current_distance <= 10100
-    water_x = randi([current_distance + water_min_spacing, current_distance + water_max_spacing]); % in m /1000;
-    water_depth_mm = randi([250-150,250-80]);
-    water_size_mm = randi([10,30])/2; % Radius 
-       
-    % Update current distance now to allow for rebar domain check
-    current_distance = water_x;
-    
-    % Gross but is a break to stop adding rebar once last one is added and
-    % is actually outside the domain 
-    
-    if current_distance > 10100
-        break;
-    end
-    
-    % Done before to allow conversion into m from mm
-    x = insertShape(x, 'FilledCircle', [(current_distance-100)/2, (250-water_depth_mm)/2, water_size_mm*2],'Color','blue','Opacity', 1 );
-    
-    % Convert measurements to m. Notw rebar_x chosen so that current
-    % distance stays in mm. Lazy - rewrite plz
-    water_x = water_x/1000;
-    water_depth = water_depth_mm/1000;
-    water_size = water_size_mm/1000; 
-
-    generate_water = [water_x, water_depth, 0, water_x, water_depth, 0.002, water_size];
-    generate_water_string = fprintf(fileID,'#cylinder: %.3f %.3f %.3f %.3f %.3f %.3f %.3f water\n', generate_water);
-    
-end 
+% current_distance = 0;
+% water_min_spacing = 100;
+% water_max_spacing = 500;
+% 
+% 
+% while current_distance <= 10100
+%     water_x = randi([current_distance + water_min_spacing, current_distance + water_max_spacing]); % in m /1000;
+%     water_depth_mm = randi([250-150,250-80]);
+%     water_size_mm = randi([10,30])/2; % Radius 
+%        
+%     % Update current distance now to allow for rebar domain check
+%     current_distance = water_x;
+%     
+%     % Gross but is a break to stop adding rebar once last one is added and
+%     % is actually outside the domain 
+%     
+%     if current_distance > 10100
+%         break;
+%     end
+%     
+%     % Done before to allow conversion into m from mm
+%     x = insertShape(x, 'FilledCircle', [(current_distance-100)/2, (250-water_depth_mm)/2, water_size_mm*2],'Color','blue','Opacity', 1 );
+%     
+%     % Convert measurements to m. Notw rebar_x chosen so that current
+%     % distance stays in mm. Lazy - rewrite plz
+%     water_x = water_x/1000;
+%     water_depth = water_depth_mm/1000;
+%     water_size = water_size_mm/1000; 
+% 
+%     generate_water = [water_x, water_depth, 0, water_x, water_depth, 0.002, water_size];
+%     generate_water_string = fprintf(fileID,'#cylinder: %.3f %.3f %.3f %.3f %.3f %.3f %.3f water\n', generate_water);
+%     
+% end 
 
 %% Rebar - Randomly generate rebar according to spec
 % REBAR SPECIFICATIONS
